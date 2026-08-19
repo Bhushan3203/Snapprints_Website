@@ -17,12 +17,18 @@ export default function AdminMachineDetail() {
     setLoading(true);
     setError("");
     Promise.all([
-      adminApi.getMachineDetail(machineId),
+      adminApi.getMachineInfo(),
+      adminApi.getMachineJobs(machineId),
       adminApi.getVendors(),
     ])
-      .then(([m, v]) => {
+      .then(([machines, machineJobs, v]) => {
+        const m = machines.find((x) => x.machine_id === machineId);
+        if (!m) {
+          setError("Machine not found");
+          return;
+        }
         setMachine(m);
-        setJobs(m?.jobs || m?.recent_jobs || []);
+        setJobs(machineJobs || []);
         setVendors(v);
       })
       .catch((err) => {
