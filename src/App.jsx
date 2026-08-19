@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 
 import AdminOverview from "./pages/admin/AdminOverview";
 import AdminMachines from "./pages/admin/AdminMachines";
-import AdminMachineDetail from "./pages/admin/AdminMachineDetail";
+import AdminMachineDetail from "./pages/admin/AdminMachinedetail";
 import AdminVendors from "./pages/admin/AdminVendors";
 import AdminVendorDetail from "./pages/admin/AdminVendorDetail";
 import AdminCustomers from "./pages/admin/AdminCustomers";
